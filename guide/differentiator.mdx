@@ -1,0 +1,46 @@
+---
+title: Differentiator
+---
+
+SecAI offers key capabilities for analyzing IPs and domains across threat detection and investigation scenarios. The platform combines structured data, threat context, behavior history, and AI-based interpretation to support efficient security workflows.
+
+## Verdicts
+SecAI assigns a risk verdict to each queried IP or domain, categorized as malicious, suspicious, benign, or unknown. Verdicts are determined through a rule-based system built on internal and external intelligence sources, including intels, historical behaviors, and more contextual data.
+The verdict provides an immediate judgment of the entity’s risk level and can serves as a reference for processes such as alert validation, IOC management, and policy response.
+
+<img src="/images/differentiator01.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />
+
+## Contexts
+Each entity is enriched with threat labels and supporting contextual data to help analysts understand its role and potential threat associations.
+Tag categories include:
+- Threat categories
+- Network Information
+- Inbound Activities & Contexts
+- Malware 
+- Attribution to APT or eCrime groups
+- Involvement in known attack campaigns
+Context includes data such as Whois, DNS records, certificates, malware samples, cybermapping, and web indexing. Both SecAI’s internal intelligence and third-party data sources are integrated and normalized.
+
+<img src="/images/differentiator02.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />
+
+## Historical Activities
+SecAI maintains a record of historical attack-related activity for IP addresses. This includes observed attack techniques, targeted ports and services, behavioral patterns, and reuse of infrastructure over time.
+This capability can be used to identify persistent threats, infrastructure reuse, and attack trend patterns.
+
+<img src="/images/differentiator03.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />
+
+## Data Aggregation
+SecAI aggregates and standardizes data from multiple third-party intelligence platforms, scanning systems, reputation sources, and public search engines, presenting them in a unified format within query results.
+Users can also link their API keys via the Integration module to access more comprehensive external intelligence and enhance the completeness and reliability of their analysis.
+
+<img src="/images/differentiator04.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />
+
+## Insight Summary
+This module provides AI-generated summaries and judgments based on multi-dimensional inputs related to an IP or domain. It integrates:
+- Intelligence tags and metadata
+- Web search and indexing information
+- Phishing detection
+- Certificate, historical behaviors and more contextual information
+The AI model synthesizes these data sources to offer a structured interpretation of the indicator and gives a corresponding judgment aligned with the underlying evidence.
+
+<img src="/images/differentiator05.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />

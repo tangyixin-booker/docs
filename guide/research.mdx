@@ -1,0 +1,60 @@
+---
+title: Research
+---
+ 
+The SecAI Research module provides a platform for querying and analyzing IP and domain intelligence. Users can retrieve information such as verdicts, threat labels, historical activity, and various metadata related to an address.
+
+## How to Use?
+
+### 1. Searching for an IP or Domain
+- Enter an IP address or domain in the search bar.
+- Click Search to view the intelligence results.
+- The results include verdicts, tags, Whois, attack history, passive DNS, certificates, and more.
+
+<img src="/images/research01.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />
+
+### 2. Get Instant Threat Verdicts
+Each queried IP or domain receives a verdict indicating its security status:
+- Malicious – Associated with known threats or attacks.
+- Suspicious – Exhibits behavior that may indicate risk.
+- Benign – No detected malicious activity.
+- Unknown – Insufficient data available.
+The verdict is determined based on rule-based detection.
+
+<img src="/images/research02.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />
+
+Also, SecAI integrates well-known external intelligence providers to enhance accuracy like VirusTotal, Greynoise and urlscan, etc. Users can configure third-party API keys in the Integration settings to unlock additional verdicts and enrich their analysis with external intelligence sources.
+
+### 3.Investigate with Threat Intelligence Labels
+Each IP or domain comes with automated intelligence labels that categorize its risk profile.Including but not limited to the following categories:
+- **Threat Attribution:** Identifies links to APT groups, botnets, or malware campaigns.
+- **Infrastructure Role:** Determines whether the entity is a C2 server, proxy, VPN, or residential IP.
+- **Behavioral Insights:** Detects use in phishing, DDoS attacks, or credential stuffing operations.
+These tags help you quickly assess risk and determine next steps.
+
+<img src="/images/research03.png" alt="" style={{margin: '0 auto', maxWidth: '100%'}} />
+
+### 4. Multi-Dimensional Data
+SecAI aggregates intelligence data to provide a comprehensive view of an address. The available data includes, but is not limited to:
+- **Whois & Registration History** – Domain ownership and changes over time.
+- **Passive DNS (pDNS)** – Historical DNS resolutions linking domains and IPs.
+- **Certificate**  – SSL/TLS certificate relationships.
+- **Port Scans & Service Banners** – Information from global scanning data.
+- **Related Malware Files** – Identified threats communicating with the address.
+- **Historical Activity** – Previously observed attack methods, targeted ports/services, and connections to other infrastructure.
+- **Web Search Results** – Extracted data from indexed webpages associated with the address.
+This information allows for deeper analysis and correlation across different data points.
+
+## Accessing Research Data
+Currently, SecAI Research is accessible through:
+- **Web Interface** – Users can perform manual searches via the platform.
+- **API Integration (Coming Soon)** – Support for automated queries.
+- **Feeds (Coming Soon)** – Continuous intelligence updates for external integration.
+These options provide flexibility in how intelligence is accessed and utilized.
+
+Get Started with SecAI Research
+Start searching now at [https://i.secai.ai/research](https://i.secai.ai/research) .
+
+For additional details, contact **SecAI Support**.
+
+

@@ -1,0 +1,300 @@
+{
+  "type": "bundle",
+  "id": "bundle--c463200e020812b14a87b4b158393650",
+  "objects": [
+    {
+      "id": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "type": "identity",
+      "name": "SecAI",
+      "identity_class": "organization",
+      "sectors": [
+        "technology"
+      ],
+      "contact_information": "contactus@secai.ai",
+      "description": "SecAI is a threat intelligence platform that analyse IPs and domains with comprehensive intelligence and data-driven insights.",
+      "created": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "spec_version": "2.1",
+      "lang": "en"
+    },
+    {
+      "id": "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e",
+      "type": "extension-definition",
+      "name": "SecAI Indicator Extension",
+      "description": "This schema adds SecAI-specific properties to Indicator objects.",
+      "schema": "https://i.secai.ai/docs/api-reference/get-stix-feeds",
+      "version": "1.0.0",
+      "extension_types": [
+        "toplevel-property-extension"
+      ],
+      "extension_properties": [
+        "secai_outbound_verdict",
+        "secai_labels"
+      ],
+      "created": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1"
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--c6385ae5-1779-09d4-e27f-ff8f2b9aa669",
+      "pattern": "[domain-name:value = 'trust.ddns.net']",
+      "name": "mal_domain: trust.ddns.net",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--f3b545fe-2c12-73c3-bd06-194ac9707a08",
+      "pattern": "[domain-name:value = 'tropadoblack.ddns.net']",
+      "name": "mal_domain: tropadoblack.ddns.net",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--3d26fc90-27fc-df62-73e1-5d4aad46772d",
+      "pattern": "[domain-name:value = 'toxics2.duckdns.org']",
+      "name": "mal_domain: toxics2.duckdns.org",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--199e8e9b-3ca5-7e8b-8130-73cf5466a9a7",
+      "pattern": "[domain-name:value = 'testing1h.duckdns.org']",
+      "name": "mal_domain: testing1h.duckdns.org",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--ea539bf4-6b69-5b74-f43b-93ae1241a867",
+      "pattern": "[domain-name:value = 'svchost.serveirc.com']",
+      "name": "mal_domain: svchost.serveirc.com",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--ea539bf4-6b69-5b74-f43b-93ae1241a867",
+      "pattern": "[domain-name:value = 'sooiahmed45.ddns.net']",
+      "name": "mal_domain: sooiahmed45.ddns.net",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--ea539bf4-6b69-5b74-f43b-93ae1241a867",
+      "pattern": "[domain-name:value = 'snsn.duckdns.org']",
+      "name": "mal_domain: snsn.duckdns.org",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--ea539bf4-6b69-5b74-f43b-93ae1241a867",
+      "pattern": "[domain-name:value = 'smallxx.ddns.net']",
+      "name": "mal_domain: smallxx.ddns.net",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--ea539bf4-6b69-5b74-f43b-93ae1241a867",
+      "pattern": "[domain-name:value = 'showtime24.store']",
+      "name": "mal_domain: showtime24.store",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_outbound_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--ea539bf4-6b69-5b74-f43b-93ae1241a867",
+      "pattern": "[domain-name:value = 'poop122.duckdns.org']",
+      "name": "mal_domain: poop122.duckdns.org",
+      "valid_from": "2025-04-22T13:41:17.000Z",
+      "modified": "2025-04-22T13:41:17.000Z",
+      "created": "2025-04-22T13:41:17.000Z",
+      "secai_labels": [
+        "c2",
+        "XWorm"
+      ]
+    }
+  ]
+}

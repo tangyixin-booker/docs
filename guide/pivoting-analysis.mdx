@@ -1,0 +1,54 @@
+---
+title: Pivoting Analysis
+---
+
+## What is Pivoting Analysis?
+
+Pivoting analysis is an investigative technique used in cybersecurity threat intelligence. It involves using known pieces of information (Indicators of Compromise - IoCs) such as IP addresses, domains, or malware hashes, to discover related, previously unknown indicators, infrastructure, or threat actor activity. The goal is to expand the scope of an investigation, uncover the full extent of an attack campaign, and identify potential future threats linked to the same adversary.
+
+## How to Perform Pivoting Analysis with IP/Domain Datasets and Threat Intelligence
+
+<img src="/images/pivoting-analysis.png" alt="" style={{margin: '0 auto'}} />
+
+Pivoting analysis typically starts with an initial known data point, often an IP address or a domain associated with malicious activity. Analysts then leverage various datasets and threat intelligence sources to find connections and related entities. Key data types used include:
+1. **IP Address and Domain Data:** Identifying current and historical resolutions (PDNS), associated domains hosted on the same IP, or IPs resolving to the same domain over time.
+2. **WHOIS Records:** Examining domain registration details like registrant name, email address, organization, registrar, and creation/expiration dates. Threat actors sometimes reuse registration information across multiple domains.
+3. **SSL/TLS Certificates:** Finding other domains or IPs that share the same SSL/TLS certificate or certificates with similar subject information or issuer details.
+4. **Internet Asset Characteristics:** Analyzing features of the hosting infrastructure, such as open ports, running services, web server banners, operating systems, or specific web technologies used. Shared infrastructure characteristics can link seemingly unrelated assets.
+5. **Domain Naming Patterns:** Identifying conventions or patterns in how domains are named (e.g., specific keywords, structures, use of dynamic DNS providers).
+6. **Associated Malware Samples:** Linking domains or IPs to specific malware families or samples that communicate with them.
+7. **Threat Intelligence Feeds:** Correlating findings with known malicious indicators, threat actor profiles, and reported campaigns from external threat intelligence sources.
+By querying these datasets with a known indicator, analysts can "pivot" from one piece of information to another, systematically mapping out the adversary's network infrastructure.
+
+## Why Pivoting Analysis is Useful for Uncovering Hidden Threats
+Pivoting analysis is highly effective for proactively identifying and neutralizing threats, often before they become fully operational. Here's why:
+- **Exploits Attacker Reuse:** Threat actors often reuse infrastructure components (like email addresses for registration, specific hosting providers, name servers, or IP subnets) and tactics (like domain naming conventions) to minimize costs and effort. Pivoting analysis directly leverages this operational pattern.
+- **Reveals Latent Infrastructure:** It allows security teams to uncover infrastructure that an attacker has set up but may not yet be actively using for malicious purposes (e.g., C&C servers, phishing sites).
+- **Provides Early Warning:** Identifying these "sleeper" assets provides an early warning, enabling organizations to block or monitor them before they are weaponized in an attack.
+
+**Example: Uncovering Unused C&C Domains**
+
+Imagine an analyst identifies an active Command and Control (C&C) domain: malicious-update-123.com. Through pivoting analysis:
+
+- **WHOIS Lookup:** The analyst examines the WHOIS record for malicious-update-123.com, noting the registrant email (e.g., hacker@protonmail.com) and the registration date.
+- **Naming Pattern Analysis:** The analyst observes the pattern [keyword]-[purpose]-[number].com.
+- **Infrastructure Analysis:** The domain resolves to IP address 198.51.100.10, hosted on a specific ASN, and uses a self-signed SSL certificate with particular subject details.
+- **Pivoting Action:** The analyst uses threat intelligence tools to search for: Other domains registered with hacker@protonmail.com.
+  - Other domains following the [keyword]-[purpose]-[number].com pattern, especially those registered around the same time.
+  - Other domains hosted on 198.51.100.0/24 or the same ASN, particularly those newly registered or exhibiting similar asset characteristics (e.g., similar open ports, server banners).
+  - Other domains using SSL certificates with similar subject information or fingerprints.
+- **Result:** This process might reveal domains like malicious-control-456.net and system-service-789.org. These domains might already be online ("live") and configured but not yet observed communicating with malware in the wild. They were likely registered by the same actor for future C&C operations.
+- **Benefit:** By identifying these domains proactively through pivoting, security teams can block access to them, preventing future infections or command communication channels from being established.
+
+## How to Use SecAI Investigator for Pivoting Analysis
+
+SecAI Investigator provides powerful capabilities to facilitate efficient pivoting analysis:
+- **Unified Data Access:** Use the SecAI Investigator portal to query any IP address or domain of interest.
+- **Rich Contextual Data:** For any queried indicator, SecAI Investigator provides access to linked datasets crucial for pivoting, including: **PDNS (Passive DNS):** View historical IP-domain resolution relationships to see infrastructure changes over time.
+  - Internet Asset Characteristics: Examine detailed profiles of associated network assets, including open ports, services, software versions, and server configurations.
+  - WHOIS Information: Access current and historical domain registration records.
+  - Associated Samples: Identify malware samples known to communicate with the IP or domain.
+  - Related Certificates: Find associated SSL/TLS certificates and pivot to other assets sharing them.
+- **AI-Powered Attribution:** Leverage the **Attribution** feature within SecAI Investigator. This function uses AI algorithms to analyze connections across these diverse datasets automatically. It intelligently identifies and suggests potentially related infrastructure or activity, significantly speeding up the pivoting process and helping you discover relevant connections you might otherwise miss.
+
+By utilizing these features, analysts can effectively use SecAI Investigator to conduct in-depth pivoting analysis, map out threat actor infrastructure, and uncover hidden threats.

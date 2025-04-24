@@ -1,0 +1,212 @@
+---
+title: Threat Labels
+---
+
+
+## Threat Categories
+
+| **Type** | **Description** | **Verdict** |
+|--------------|---------------------------------------|--------------------|
+| C2 | This network address is a command and control server used by attackers. | Malicious |
+| Botnet | This network address is a node within a network of compromised computers. | Malicious |
+| Hijacked | This network address has been compromised and controlled by an attacker. | Malicious |
+| Phishing | This network address is a phishing site designed to steal user credentials. | Malicious |
+| Malware | This network address distributes malicious software to compromised systems. | Malicious |
+| Exploit | This network address attempted to exploit system vulnerabilities. | Malicious |
+| Scanner | This network address initiated network scanning activities, indicating potential threats. | Malicious |
+| Zombie | This network address is a compromised bot controlled by attackers. | Malicious |
+| Spam | This network address is associated with spam distribution activities. | Malicious |
+| Compromised | This network address is a host infiltrated by attackers. | Suspicious |
+| Brute Force | This network address initiated a brute force attack to gain unauthorized access. | Malicious |
+
+## Sub-type of “C2”
+
+| **Type** | **Description** | **Verdict** |
+|--------------|--------------------------------------|--------------------|
+| Sinkhole C2 | This network address is formerly a C2 server now controlled by security organisation. | Malicious |
+
+## Sub-type of “Suspicious”: Mining related
+
+| **Type** | **Description** | **Verdict** |
+|--------------|---------------------------------------|--------------------|
+| MiningPool | This network address is a private mining pool for cryptojacking activity. | Malicious |
+| CoinMiner | This network address is a public mining pool server, potentially misused by attackers. | Malicious |
+
+## Sub-type of “Suspicious”: Others
+
+| **Type** | **Description** | **Verdict** |
+|------------------|-----------------------------------|--------------------|
+| Suspicious Application | This network address is potentially harmful, containing malicious content. | Suspicious |
+| Suspicious Website | This network address is potentially harmful, containing malicious content. | Suspicious |
+| Reverse Proxy | This network address is a reverse proxy server, requiring security vigilance. | Suspicious |
+| C2 Panel | This network address is a command and control panel used by threat actors for managing infected systems. | Suspicious |
+| Fake Software Downloader | This network address hosts a fake software site that mimics legitimate platforms to trick users into downloading malware. | Suspicious |
+
+## Sub-type of “Phishing”
+
+| **Type** | **Description** | **Verdict** |
+|-----------------|------------------------------------|-------------------|
+| Fake Website | This network address imitates legitimate sites to steal user data. | Malicious |
+
+## Sub-type of “Brute Force”
+
+| **Type** | **Description** | **Verdict** |
+|-----------------|-----------------------------------|--------------------|
+| SSH Brute Force | This network address initiated a brute force attack against SSH services. | Malicious |
+| FTP Brute Force | This network address initiated a brute force attack against FTP services. | Malicious |
+| SMTP Brute Force | This network address initiated a brute force attack against SMTP services. | Malicious |
+| Http Brute Force | This network address attempted HTTP brute-force attacks to bypass Basic Authentication. | Malicious |
+| Web Login Brute Force | This network address initiated a brute force attack against web login portals. | Malicious |
+
+## Network Information
+
+| **Type** | **Description** |
+|-----------------------|-------------------------------------------------|
+| Bogon | This network address is reserved and not intended for public internet use. |
+| FullBogon | This network address is unassigned and should not be used for communication. |
+| Gateway | This network address is a gateway device facilitating network data exchange. |
+| IDC | This network address belongs to an Internet Data Center, potentially used for attacks. |
+| Dynamic IP | This network address is a temporary IP assigned by an ISP. |
+| Edu | This network address originates from an educational network. |
+| DDNS | This network address uses Dynamic DNS, often used by malicious C2 servers. |
+| Mobile | This network address is a node in a mobile communication network. |
+| Search Engine Crawler | This network address is a search engine crawler. |
+| CDN | This network address belongs to a Content Delivery Network. |
+| Advertisement | This network address is associated with an internet advertising service |
+| DNS | This network address is a DNS(Domain Name System) server. |
+| BTtracker | This network address is a BitTorrent tracker used for P2P file sharing. |
+| Backbone | This network address is part of a network service provider's backbone. |
+| IoT Device | This network address belongs to an IoT(Internet of Things) device. |
+| Game Server | This network address belongs to an internet gaming server. |
+| CloudWAF | This network address is a Cloud Web Application Firewall service. |
+| HTTP Proxy | This network address provides HTTP proxy services. |
+| Socks Proxy | This network address provides Socks proxy services. |
+| VPN | This network address provides VPN services for encrypted connections. |
+| Tor | This network address operates a Tor service for anonymous communication. |
+
+## Inbound Activities & Contexts
+
+| **Type** | **Description** |
+|-----------------------|-------------------------------------------------|
+| Censys | This IP address is part of Censys infrastructure. Censys scans public IPs and domains for security analysis. |
+| Shadon | This IP address is part of Shodan infrastructure. Shodan indexes Internet-connected devices for security intelligence. |
+| PetalBot | This IP address is part of PetalBot infrastructure. PetalBot is the crawler for Huawei's Petal Search. |
+| BingBot | This IP address is part of Bingbot infrastructure. Bingbot is Microsoft's web crawler for Bing search. |
+| Reacher-scanner | This IP address is part of Reacher-scanner infrastructure. Reacher-scanner scans for SSH host keys and JARM hashes. |
+| BinaryEdge.io | This IP address is part of BinaryEdge infrastructure. BinaryEdge collects, analyzes, and categorizes Internet data through cybersecurity, engineering, and data science efforts. |
+| Yandex Search Engine | This IP address is part of Yandex Search infrastructure. Yandex Search is a major Russian search engine. |
+| GoogleBot | This IP address is part of Googlebot infrastructure. Googlebot is Google's web crawler. |
+| Rapid7 Project Sonar | This IP address is part of Rapid7 Project Sonar infrastructure. Project Sonar scans public networks for security vulnerabilities. |
+| AppleBot | This IP address is part of Applebot infrastructure. Applebot is Apple's web crawler. |
+| IPIPNET | This IP address is part of IPIP.NET infrastructure. IPIP.NET provides IP geolocation and profiling. |
+| IPinfo.io | This IP address is part of IPinfo infrastructure. IPinfo provides IP intelligence, including geolocation and ISP data. |
+| DataGrid Surface | This IP address is part of DataGrid Surface infrastructure. DataGrid Surface scans for vulnerable devices. |
+| Onyphe | This IP address is part of Onyphe infrastructure. Onyphe is a cybersecurity search engine. |
+| ShadowServer.org | This IP address is part of ShadowServer.org infrastructure. ShadowServer.org provides threat intelligence and cybercrime monitoring. |
+| Driftnet | This IP address is part of Driftnet infrastructure. Driftnet tracks Internet footprints. |
+| Bitsight | This IP address is part of Bitsight infrastructure. Bitsight provides cybersecurity risk management. |
+| Malware Patrol | This IP address is part of Malware Patrol infrastructure. Malware Patrol collects malware and threat intelligence. |
+| Ahrefs | This IP address is part of Ahrefs infrastructure. Ahrefs analyzes website traffic and SEO. |
+| SOCRadar | This IP address is part of SOCRadar infrastructure. SOCRadar provides extended threat intelligence. |
+| Babbar | This IP address is part of Babbar infrastructure. Babbar analyzes backlinks for SEO. |
+| Mojeek | This IP address is part of MojeekBot infrastructure. MojeekBot is the crawler for Mojeek search engine. |
+| Seznam | This IP address is part of Seznam infrastructure. Seznam is a major Czech search engine. |
+| OpenIntel.nl | This IP address is part of OpenIntel.nl infrastructure. OpenIntel.nl is an OSINT platform. |
+| Archive.org | This IP address is part of Archive.org infrastructure. Archive.org is a digital library. |
+| CyberGreen | This IP address is part of CyberGreen infrastructure. CyberGreen focuses on cybersecurity public health. |
+| Facebook Crawler | This IP address is part of Facebook Crawler infrastructure. Facebook Crawler indexes web content for Facebook. |
+| SouGou Crawler | This IP address is part of Sogou Crawler infrastructure. Sogou Crawler is the crawler for chinese search engine Sogou . |
+| DataForSEO Link Bot | This IP address is part of DataForSEO Link Bot infrastructure. DataForSEO Link Bot is a web crawler for SEO. |
+| BLEXBOT | This IP address is part of BLEXBot infrastructure. BLEXBot analyzes web content. |
+| SBA Research Scanner | This IP address is part of SBA Research Scanner infrastructure. SBA Research Scanner conducts network reconnaissance. |
+| SEMrush Bot | This IP address is part of SemrushBot infrastructure. SemrushBot collects web data for SEO. |
+| CriminalIP | This IP address is part of CriminalIP infrastructure. CriminalIP provides threat intelligence on Internet-connected assets. |
+| Asset Reconnaissance Lighthouse | This IP address has been associated with ARL activity. ARL is a tool that maps Internet assets for security. |
+| AWVS | This IP address is part of AWVS infrastructure. AWVS scans web applications for vulnerabilities. |
+| Xray | This IP address has been associated with Xray activity. Xray is a security assessment tool. |
+| Gophish | This IP address has been part of Gophish infrastructure. Gophish is a phishing awareness framework. |
+| BeEF | This IP address has been associated with BeEF activity. BeEF is a browser exploitation framework. |
+| Metasploit | This IP address has been associated with Metasploit activity. Metasploit is a penetration testing framework. |
+| Rengine | This IP address has been associated with Rengine activity. Rengine is a web application reconnaissance framework. |
+| Dcrat | This IP address has been associated with DCRat activity. DCRat is a remote access Trojan (RAT). |
+| QakBot | This IP address has been associated with QakBot activity. QakBot is a banking Trojan. |
+| QuasarRAT | This IP address has been associated with QuasarRAT activity. QuasarRAT is a remote administration tool. |
+| SuperShell | This IP address has been associated with SuperShell activity. SuperShell is a C2 remote control platform. |
+| Hak5 | This IP address has been associated with Hak5 Cloud C² activity. Hak5 Cloud C² is a cloud-based management tool. |
+| Empire | This IP address has been associated with Empire activity. Empire is a post-exploitation framework. |
+| RedGuard | This IP address has been associated with RedGuard activity. RedGuard is a C2 traffic obfuscation tool. |
+| Mrrobot | This IP address has been associated with Mrrobot activity. Mrrobot is a phishing tool. |
+| Unknown | Unknown refers to entities where insufficient characteristics exist to determine a definitive classification. |
+| Nmap | This IP address has been associated with Nmap activity. Nmap is a network scanner. |
+| XunfengScan | This IP address has been associated with XunfengScan activity. XunfengScan is a vulnerability scanner. |
+| GoHTTPServer | This IP address has been associated with GoHTTPServer activity. GoHTTPServer is a lightweight HTTP server. |
+| Enterprise | This IP address belongs to a private commercial organization. |
+| Security Vendor | This IP address belongs to a cybersecurity company providing security products or services. |
+| Medical institution | This IP address belongs to a healthcare organization. |
+| Financial Institutions | This IP address belongs to a financial service provider. |
+| Research Institutions | This IP address belongs to a research institution. |
+| Government | This IP address belongs to a government or public service institution. |
+| Educational institution | This IP address belongs to an educational institution. |
+| Others | This IP address belongs to an organization not classified under the main categories. |
+| Active | This IP address has been highly active recently. |
+| Nondirected Attack | This IP address has been captured by a honeypot recently. |
+
+## Malwares
+
+| **Type** | **Description** |
+|-----------------------|-------------------------------------------------|
+| Fobber | Fobber is a Trojan that steals sensitive information from infected computers. It spreads through malicious downloads, links, and spam attachments. |
+| SBDHToolkit | The SBDH Espionage Toolkit represents an advanced threat. Some of the techniques applied by the malware bear a resemblance to the techniques used in Operation Buhtrap. The SBDH toolkit focuses on theft of information and credentials from victims. |
+| Odinaff | Odinaff is a lightweight backdoor Trojan targeting banks and financial institutions since January 2016. It spreads via spear-phishing emails and botnets, executing commands and downloading malicious files. |
+| Dridex | Dridex is a type of banking malware that uses macros in Microsoft Office to infect systems. Once infected, it can steal banking credentials and other personal information to access financial records. |
+| Shylock | Shylock is a banking Trojan that is designed to intercept online banking transactions and steal victims' credentials. |
+| DroidJack | DroidJack is a remote access trojan (RAT) on the Android platform that allows malicious users to gain full control of an infected smartphone. |
+| Ploutus | Ploutus is an advanced ATM malware first discovered in Mexico in 2013. It allows attackers to empty ATMs using an external keyboard or SMS messages, employing a previously unseen technique. |
+| Isrstealer | ISR Stealer is used to steal saved cookies and passwords from browsers like IE, Chrome, and Firefox, as well as from messaging applications. |
+| PcClient | PcClient is a backdoor Trojan horse program with rootkit functionality that allows a remote attacker unauthorized access to the compromised computer. |
+| Conficker | Conficker is a computer worm targeting Microsoft Windows, first detected in November 2008. It exploits Windows OS flaws and uses dictionary attacks on passwords to spread, forming a botnet and infecting millions globally. |
+| Dorkbot | Dorkbot is a malware family that steals online credentials from infected systems. It downloads other malware and blocks access to security-related websites. It spreads via social media and infected USB devices. |
+| Kelihos | Kelihos is a botnet involved in distributing spam emails that may contain links to malware like ransomware. It is a peer-to-peer botnet where infected systems communicate to execute tasks like sending spam and launching DDoS attacks. |
+| Tinytyphon | Tinytyphon is a family of malware used in Operation Monsoon. |
+| HydraCrypt | HydraCrypt is a ransomware that encrypts personal documents on a victim's computer using RSA-2048 and AES CBC 256-bit encryption, appending the .hydracrypt_ID\_\[8 random characters\] extension to the files. |
+| KHRAT | KHRAT is a custom remote access trojan (RAT) discovered by Forcepoint Security Labs. It was used in the DragonOK campaign targeting political parties in Cambodia and other countries like Taiwan, Japan, Tibet, and Russia. |
+
+## Threat Groups
+
+| **Type** | **Description** |
+|-----------------------|-------------------------------------------------|
+| UnitedCyberCaliphate | United Cyber Caliphate is a hacktivist group acting as the cyber army for the Islamic State. The group pledged allegiance to the Islamic State and its objectives, emerging in late 2014. |
+| CopyKittens | CopyKittens is a spy group that has been attacking Israeli targets since at least August 2014, including senior diplomats from the Israeli Ministry of Foreign Affairs and academic researchers in Middle East studies. |
+| Patchwork | Patchwork, also known as Chinastrats or Drooping Elephant, is an Indian hacker group exposed in July 2016. They conduct network attacks using office vulnerabilities and phishing websites, targeting industries in China and South Asian government departments. |
+| LulzSec | LulzSec is a black hat hacking group known for high-profile attacks, including the 2011 Sony Pictures breach. |
+| SyrianElectronicArmy | The Syrian Electronic Army (SEA) is a hacker group that emerged in 2011 to support Syrian President Bashar al-Assad. They use spamming, website defacement, malware, phishing, and DDoS attacks against political opponents, western media, human rights groups, and neutral websites. They have also targeted government websites in the Middle East, Europe, and US defense contractors. |
+| SixLittleMonkeys | SixLittleMonkeys is a cyber espionage group discovered in July 2016 targeting Russia. They use social engineering, exploits, and custom tools, primarily focusing on military and government sectors. |
+| Turla | Turla is a Russian APT group linked to the Russian government, active since 2007. Known for attacks on the US Central Command in 2008 and Swiss military contractor RUAG from 2014 to 2016. |
+| RussianBusinessNetwork | RussianBusinessNetwork The Russian Business Network (RBN) is a notorious cybercrime organization known for identity theft, phishing, cyber attacks, and malware distribution. It is linked to the MPack exploit kit and the Storm botnet. |
+| VolatileCedar | VolatileCedar is a persistent attacker group possibly originating from Lebanon with political affiliations, known for conducting politically motivated cyber attacks. |
+| CultoftheDeadCow | Cult of the Dead Cow is a hacker group and DIY media organization founded in 1984 in Lubbock, Texas. They release new media and share member opinions through their weblog titled "Cult of the Dead Cow". |
+| MuddyWater | MuddyWater is suspected to be a hacking group from Iran, active since September 2017, targeting government, telecom, and energy companies in the Middle East. |
+| PhineasFisher | PhineasFisher: This tag identifies activity associated with the Phineas Fisher hacking group, known for breaches targeting government contractors like Hacking Team and Gamma Group. |
+| PassCV | PassCV is a cyber-espionage group that uses stolen Authenticode-signing certificates to avoid detection. They deploy commercial RATs and custom malware like Kitkiot and Sabresac, targeting the US, Taiwan, China, and Russia. |
+| KONNI | KONNI The Konni organization first became active in 2014 and was exposed by the Cisco security team in 2017. It mainly launched attacks against Korean financial companies. |
+| FriendlyBird | FriendlyBird is a threat actor group, identified by Kaspersky, targeting Iranian organizations in sectors like media, energy, transportation, and industry with cyberattacks. |
+
+## Threat Campaigns
+
+| **Type** | **Description** |
+|------------------------|------------------------------------------------|
+| FinSpy_attack | FinSpy attack indicates activity associated with the FinSpy spyware suite. This powerful tool is known for surveillance and data exfiltration capabilities, often employed by nation-states. |
+| FinSpy_attack | FinSpy attack indicates activity associated with the FinSpy spyware suite. This powerful tool is known for surveillance and data exfiltration capabilities, often employed by nation-states. |
+| FreeMilk | FreeMilk is a cyber espionage campaign targeting government and private sector organizations, primarily in East Asia, using spear-phishing emails to deliver malware for data exfiltration. |
+| Subaat_Operation | Subaat_Operation is a small phishing campaign targeting US government agencies, utilizing Crimson Downloader and CVE-2012-0158 vulnerabilities, ultimately delivering malicious software like QuasarRAT. |
+| BlackWater | BlackWater is an APT attack by the MuddyWater group targeting the Middle East. Attackers use phishing emails with malicious VBA scripts in documents to execute PowerShell scripts and collect victim data. |
+| XshellGhost | XshellGhost is a backdoor discovered in the Xshell software in 2017. It uses DGA to generate new C&C domains monthly and communicates via DNS TXT requests to transmit victim information and receive commands. |
+| EyePyramid | EyePyramid is a cyberattack targeting top Italian government members and institutions using malware named "EyePyramid" to compromise politicians, bankers, freemasons, and law enforcement in Italy. |
+| Phpstudy | Phpstudy is a 2016 incident where attackers compromised the official Phpstudy website, embedding backdoors in nearly all online versions. They illegally controlled over 670,000 computers and stole over 100,000 sets of data. |
+| Cmstar_Campaign | Cmstar_Campaign refers to an attack on the Belarusian government by the Cmstar Trojan, which acted as a downloader and ultimately delivered the Pylot and Byeby backdoors. |
+| VBS_Campaign | VBS_Campaign is a cyber-espionage operation targeting the Middle East. Attackers use scripting languages (VBScript, PowerShell, VBA) to load and execute scripts from a Command & Control server, demonstrating strong operational security. |
+| WildPressure | WildPressure is a targeted attack campaign discovered in August 2019 by Kaspersky, using a C++ Trojan named Milum. It primarily targets industrial organizations in the Middle East. |
+| AttackOnBithumb | AttackOnBithumb Involved attacks on the Korean digital currency industry using CobaltStrike payloads and a white-black backdoor Trojan. Early attacks linked to domestic hackers, suggesting possible ties to local groups. |
+| XCSSET | XCSSET is malware that inserts malicious code into Xcode projects, performs UXSS backdoor planting in Safari, and leverages two zero-day exploits. |
+| MysterySnail | MysterySnail In late August and early September 2021, Kaspersky detected attacks exploiting privilege escalation vulnerabilities on multiple Microsoft Windows servers, linked to the IronHusky hacker group. |
+| OnionPoison | OnionPoison A link to a malicious Tor installer was posted on a popular Chinese-language YouTube channel focused on internet anonymity. The channel has over 180,000 subscribers and the video has over 64,000 views. |

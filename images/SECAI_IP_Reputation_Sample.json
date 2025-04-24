@@ -1,0 +1,291 @@
+{
+  "type": "bundle",
+  "id": "bundle--de973f3053cac8d480ae7041dbbd7f7e",
+  "objects": [
+    {
+      "id": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "type": "identity",
+      "name": "SecAI",
+      "identity_class": "organization",
+      "sectors": [
+        "technology"
+      ],
+      "contact_information": "contactus@secai.ai",
+      "description": "SecAI is a threat intelligence platform that analyse IPs and domains with comprehensive intelligence and data-driven insights.",
+      "created": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "spec_version": "2.1",
+      "lang": "en"
+    },
+    {
+      "id": "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e",
+      "type": "extension-definition",
+      "name": "SecAI Indicator Extension",
+      "description": "This schema adds SecAI-specific properties to Indicator objects.",
+      "schema": "https://i.secai.ai/docs/api-reference/get-stix-feeds",
+      "version": "1.0.0",
+      "extension_types": [
+        "toplevel-property-extension"
+      ],
+      "extension_properties": [
+        "secai_inbound_verdict",
+        "secai_labels"
+      ],
+      "created": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1"
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--1a78741c-71d3-51d4-3f02-934b1e600d05",
+      "pattern": "[ipv4-addr:value = '154.141.192.126']",
+      "name": "mal_ip: 154.141.192.126",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "bruteforce"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--80b12d1e-703b-d76c-a408-15e3055e55af",
+      "pattern": "[ipv4-addr:value = '154.141.103.194']",
+      "name": "mal_ip: 154.141.103.194",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "exploit"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--8fe595b2-2f7f-c814-b8d5-fb885b86f030",
+      "pattern": "[ipv4-addr:value = '1.34.5.192']",
+      "name": "mal_ip: 1.34.5.192",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "spam",
+        "zombie"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--c312e2bf-5100-8d14-ace4-1336bbb20644",
+      "pattern": "[ipv4-addr:value = '154.141.213.124']",
+      "name": "mal_ip: 154.141.213.124",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "spam"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--2245059e-03c6-07cc-308f-763ab56d3534",
+      "pattern": "[ipv4-addr:value = '154.141.238.250']",
+      "name": "mal_ip: 154.141.238.250",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "scanner"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--c0740063-90d4-53b3-930d-810dc24d4ba9",
+      "pattern": "[ipv4-addr:value = '85.26.233.207']",
+      "name": "mal_ip: 85.26.233.207",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "exploit"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--0c724912-13e1-c097-ae2c-2aa1b3bfe147",
+      "pattern": "[ipv4-addr:value = '93.123.109.168']",
+      "name": "mal_ip: 93.123.109.168",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "exploit"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--198ce5d5-b3c1-d15e-3844-92714ee36e60",
+      "pattern": "[ipv4-addr:value = '95.47.59.252']",
+      "name": "mal_ip: 95.47.59.252",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "exploit"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--b5e61e91-6b2a-85e3-ee3d-a30771fe4caa",
+      "pattern": "[ipv4-addr:value = '88.214.48.77']",
+      "name": "mal_ip: 88.214.48.77",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "exploit"
+      ]
+    },
+    {
+      "type": "indicator",
+      "secai_inboud_verdict": "malicious",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern_type": "stix",
+      "extensions": {
+        "extension-definition--7b2e1c4a-6d03-4a8c-9f5e-3a0c8d4f5b1e": {
+          "extension_type": "toplevel-property-extension"
+        }
+      },
+      "created_by_ref": "identity--3d5f8a2b-1c9e-4f6a-a7d3-2b8c4e1f6a9d",
+      "spec_version": "2.1",
+      "lang": "en",
+      "id": "indicator--1f1959c3-7679-8b4b-8c13-6ca18136b6ee",
+      "pattern": "[ipv4-addr:value = '95.24.108.131']",
+      "name": "mal_ip: 95.24.108.131",
+      "valid_from": "2025-04-22T16:05:54.000Z",
+      "modified": "2025-04-22T16:05:54.000Z",
+      "created": "2025-04-22T16:05:54.000Z",
+      "secai_labels": [
+        "exploit"
+      ]
+    }
+  ]
+}

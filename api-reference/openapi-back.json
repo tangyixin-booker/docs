@@ -1,0 +1,252 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI Plant Store",
+    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "license": {
+      "name": "MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://sandbox.mintlify.com"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/plants": {
+      "get": {
+        "description": "This API provides inbound malicious or suspicious IPs.",
+        "parameters": [
+          {
+            "name": "time",
+            "in": "query",
+            "description": "Precise time in UTC, format: YYYYMMDDHH. \nFor example, 2021012211 returns data from 2021-01-22 11:00 to 11:59 (UTC).\nDefault: returns the most recent data (t-2 hours).",
+            "schema": {
+              "type": "string",
+              "format": "YYYYMMDDHH"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful request returns a ZIP file containing a STIX 2.1 formatted JSON bundle.",
+            "content": {
+              "application/zip": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/plants/{id}": {
+      "delete": {
+        "description": "Deletes a single plant based on the ID supplied",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of plant to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Plant deleted",
+            "content": {}
+          },
+          "400": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "webhooks": {
+    "/plant/webhook": {
+      "post": {
+        "description": "Information about a new plant added to the store",
+        "requestBody": {
+          "description": "Plant added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPlant"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the data was received successfully"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Plant": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the plant",
+            "type": "string"
+          },
+          "tag": {
+            "description": "Tag to specify the type",
+            "type": "string"
+          }
+        }
+      },
+      "NewPlant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Plant"
+          },
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Identification number of the plant",
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ]
+      },
+      "Error": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "400"
+          },
+          "message": {
+            "type": "string",
+            "description": "Required parameters : {apikey}\nInvalid parameters : {time}"
+          }
+        }
+      },
+      "NoAuth": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "401"
+          },
+          "message": {
+            "type": "string",
+            "description": "Invalid access IP\nInvalid API key\nInvalid API key status"
+          }
+        }
+      },
+      "InvalidMethod": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "405"
+          },
+          "message": {
+            "type": "string",
+            "description": "Invalid HTTP method"
+          }
+        }
+      },
+      "InvalidQuota": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "429"
+          },
+          "message": {
+            "type": "string",
+            "description": "Request rate limit exceeded\nExceeding the  {daily/monthly/total} quota."
+          }
+        }
+      },
+      "SystemError": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "500"
+          },
+          "message": {
+            "type": "string",
+            "description": "System error"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

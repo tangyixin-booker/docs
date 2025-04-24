@@ -1,0 +1,31 @@
+---
+title: Inbound IP Enrichment
+---
+
+## What is Inbound IP Enrichment?
+
+IP enrichment is the process of enhancing basic IP address information with additional context and details obtained from a variety of sources . This process transforms a simple numerical identifier into a rich source of intelligence, providing valuable insights for security and analytics. The context added through enrichment can encompass a wide range of attributes, including the geographical location of the IP address, the Internet Service Provider (ISP) responsible for the IP range, the organization or company associated with the IP, the privacy status indicating if the IP is associated with a proxy, VPN, or the Tor network, and importantly, reputation scores that reflect the historical behavior and trustworthiness of the IP address . This additional information converts rudimentary IP logs into actionable intelligence, empowering organizations to make data-driven decisions and proactively address potential security risks.
+
+**Note:** Inbound IP enrichment focuses on adding context to IP addresses of incoming network traffic, unlike outbound enrichment which analyzes IPs of external communications.
+
+<img src="/images/inbound-ip01.png" alt="" style={{margin: '0 auto'}} />
+
+## Why Inbound IP Enrichment Matters for Security Operations?
+
+IP Enrichment can be used to: 
+
+- **Improving Threat Detection:** Provides context (geolocation, proxy/VPN/Tor use, reputation) to identify malicious sources and activities.
+- **Accelerating Incident Response:** Offers immediate context for faster alert triage, prioritization, and proactive defense with Indicators of Future Attack (IOFAs), enabling automated initial responses.
+- **Enhancing Correlation and Detection:** Enables better correlation of events in SIEM systems for identifying sophisticated attacks by providing a comprehensive threat landscape view.
+- **Reducing Workload:** Automates data gathering, allowing analysts to focus on complex threats, and enables IPS to block known malicious traffic.
+
+<img src="/images/inbound-ip02.png" alt="" style={{margin: '0 auto'}} />
+
+## Integrating IP Reputation Datasets into Your Security Infrastructure
+
+To effectively leverage the intelligence provided by IP reputation datasets, you should integrate them into your existing security infrastructure:
+- **Security Information and Event Management (SIEM) Systems:** SIEM platforms ingest IP reputation feeds and correlate this intelligence with other security logs and events to provide a more comprehensive view of the threat landscape and enhance alert prioritization.For example, SIEM uses IP reputation to identify and filter out inbound connections from legitimate internet scanners, reducing alert noise for security analysts.
+- **Threat Intelligence Platforms (TIPs):** TIPs allow organizations to aggregate and manage IP reputation data from multiple sources, enrich it with other forms of threat intelligence, and disseminate it to various security tools. For example, TIP automatically blocks inbound connections from IPs flagged by multiple feeds as malicious (e.g., malware distributors), preventing potential attacks.
+- **Security Orchestration, Automation and Response (SOAR) Platforms:** SOAR platforms automate incident response workflows based on IP reputation data. For example SOAR automatically blocks malicious inbound IPs detected by firewalls and enriched with IP reputation data, blocks the inbound IP address on all network firewalls, or generates a ticket for the security team with the enriched information and automated actions taken. Such automated response minimizes the window of opportunity for an attack.
+
+SecAI provides high fidelity IP reputation datasets, you can using our portal query the data or integrate them into your existing security infrastructure via **<u>SaaS API</u>** or **<u>data feeds</u>**(both coming soon).
