@@ -59,16 +59,16 @@ function clearDownloadButtonsStyle() {
 
 function bindDownloadEvent() {
   // 这次打开页面前已提交过，绑定下载事件
-  document.querySelectorAll('.secai-download-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
-      const hasSubmitted = checkFormSubmission();
-      if (hasSubmitted) {
-        //获取id
-        const id = button.id;
-        downloadFile(id)
-      }
+  const hasSubmitted = checkFormSubmission();
+  if (hasSubmitted) {
+    document.querySelectorAll('.secai-download-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+          //获取id
+          const id = button.id;
+          downloadFile(id)
+      });
     });
-  });
+  }
 }
 
 // 页面加载完成后
@@ -79,7 +79,7 @@ window.addEventListener('load', () => {
   // 监听路径变化
   let lastPathname = window.location.pathname;
   const observer = new MutationObserver(() => {
-    if (window.location.pathname !== lastPathname && window.location.pathname === '/api-reference/feeds_introduction') {
+    if (window.location.pathname !== lastPathname) {
       lastPathname = window.location.pathname;
       clearDownloadButtonsStyle();
       bindDownloadEvent()
