@@ -39,21 +39,56 @@ function downloadFile(id) {
   a.click();
 }
 
-let hasSubmitted = checkFormSubmission();
-
-// 页面加载完成后
-window.addEventListener('load', () => {
+// 清空下载按钮样式的函数
+function clearDownloadButtonsStyle() {
+  const hasSubmitted = checkFormSubmission();
   if (hasSubmitted) {
     // 清空download_ioc、download_ip元素的class
     const downloadIoc = document.getElementById('download_ioc');
-    downloadIoc.classList.remove('hs-cta-trigger-button');
-    downloadIoc.classList.remove('hs-cta-trigger-button-189188848506');
     const downloadIp = document.getElementById('download_ip');
-    downloadIp.classList.remove('hs-cta-trigger-button');
-    downloadIp.classList.remove('hs-cta-trigger-button-189188848506');
+    if (downloadIoc) {
+      downloadIoc.classList.remove('hs-cta-trigger-button');
+      downloadIoc.classList.remove('hs-cta-trigger-button-189188848506');
+    }
+    if (downloadIp) {
+      downloadIp.classList.remove('hs-cta-trigger-button');
+      downloadIp.classList.remove('hs-cta-trigger-button-189188848506');
+    }
   }
+}
 
-// 在调整下载按钮class之后加载,否则会给下载按钮绑定事件
+function bindDownloadEvent() {
+  // 这次打开页面前已提交过，绑定下载事件
+  document.querySelectorAll('.secai-download-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const hasSubmitted = checkFormSubmission();
+      if (hasSubmitted) {
+        //获取id
+        const id = button.id;
+        downloadFile(id)
+      }
+    });
+  });
+}
+
+// 页面加载完成后
+window.addEventListener('load', () => {
+  // 初始检查并清空下载按钮样式
+  clearDownloadButtonsStyle();
+
+  // 监听路径变化
+  let lastPathname = window.location.pathname;
+  const observer = new MutationObserver(() => {
+    if (window.location.pathname !== lastPathname && window.location.pathname === '/api-reference/feeds_introduction') {
+      lastPathname = window.location.pathname;
+      clearDownloadButtonsStyle();
+      bindDownloadEvent()
+    }
+  });
+  
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // 在调整下载按钮class之后加载,否则会给下载按钮绑定事件
   fetch('//js.hs-scripts.com/48609194.js')
     .then(response => response.text())
     .then(scriptContent => {
@@ -66,21 +101,20 @@ window.addEventListener('load', () => {
     })
     .catch(error => console.error('加载HubSpot脚本失败:', error));
 
-  document.querySelectorAll('.secai-download-btn').forEach(button => {
-    button.addEventListener('click', (e) => {
-      if (hasSubmitted) {
-        //获取id
-        const id = button.id;
-        downloadFile(id)
-      }
-    });
-  });
+  bindDownloadEvent();
 
   // 为所有HubSpot触发器按钮添加点击事件
   document.querySelectorAll('.hs-cta-trigger-button-189188848506').forEach(button => {
     button.addEventListener('click', (e) => {
       if (button.id === 'download_ioc' || button.id === 'download_ip') {
         localStorage.setItem('downloadType', button.id);
+        // 这次打开页面在其他位置提交过
+        const hasSubmitted = checkFormSubmission();
+        if (hasSubmitted) {
+          //获取id
+          const id = button.id;
+          downloadFile(id)
+        }
       } else {
         localStorage.removeItem('downloadType');
       }
@@ -101,7 +135,6 @@ window.addEventListener('message', (event) => {
   ) {
     // 记录用户已提交表单
     recordFormSubmission();
-    hasSubmitted = true;
     // 下载文件
     const downloadType = localStorage.getItem('downloadType');
 
